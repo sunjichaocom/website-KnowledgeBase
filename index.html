@@ -17,10 +17,15 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
 </head>
 <body>
+  <nav>
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+  </nav>
   <div id="app">加载中</div>
   <script>
     window.$docsify = {
-      //...
+      //定制侧边栏
+      loadSidebar: true
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
