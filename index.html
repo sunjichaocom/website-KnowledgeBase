@@ -31,7 +31,7 @@
         // Edit Button
         function(hook, vm) {
           hook.beforeEach(function (html) {
-            var url = 'https://github.com/docsifyjs/docsify/blob/master/docs' + vm.route.file
+            var url = 'https://github.com/sunjichaocom/website-KnowledgeBase/blob/master/' + vm.route.file
             var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n'
 
             return editHtml
@@ -47,7 +47,7 @@
           var footer = [
             '<hr/>',
             '<footer>',
-            '<span><a href="https://github.com/QingWei-Li">cinwell</a> &copy;2017.</span>',
+            '<span><a href="https://www.sunjichao.com">SunJiChao</a> &copy;2017.</span>',
             '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
             '</footer>'
           ].join('')
