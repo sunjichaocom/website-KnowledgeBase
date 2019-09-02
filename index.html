@@ -14,40 +14,53 @@
   <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
   <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
   <link rel=canonical href=https://kb.sunjichao.com />
-  <link rel="stylesheet" href="//unpkg.com/docsify/themes/buble.css">
+  <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
 </head>
 <body>
-  <nav>
-    <a href="#/">EN</a>
-    <a href="#/zh-cn/">中文</a>
-  </nav>
-  <div id="app">加载中</div>
+  <div id="app"></div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
   <script>
     window.$docsify = {
-      //定制侧边栏
-      loadSidebar: true,
+      name: 'docsify',                              // 文档标题，会显示在侧边栏顶部。
+      nameLink: '/',                                // 点击文档标题后跳转的链接地址。
+      loadSidebar: true,                            // 加载自定义侧边栏，参考多页文档。设置为 true 后会加载 _sidebar.md 文件，也可以自定义加载的文件名。
+      coverpage: true,                              // 启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
+      repo: 'sunjichaocom/website-KnowledgeBase',   // 配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件。
+      maxLevel: 6,                                  // 默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级。
+      loadNavbar: true,                             // 加载自定义导航栏，参考定制导航栏 了解用法。设置为 true 后会加载 _navbar.md 文件，也可以自定义加载的文件名。
+      auto2top: true,                               // 切换页面后是否自动跳转到页面顶部
+      mergeNavbar: true,                            // 小屏设备下合并导航栏到侧边栏。
+      // search: 'auto',                               // 全文搜索 - Search
+      // homepage: 'home.md',                       // 入口文件改为 /home.md
+      // logo: '/_media/icon.svg',                  // 在侧边栏中出现的网站图标，你可以使用CSS来更改大小
+
+      search: {
+        noData: '没有结果!',
+        paths: 'auto',
+        placeholder: '搜索'
+      },
+
+      themeable: {
+          readyTransition : true, // default
+          responsiveTables: true  // default
+      },
+
+      pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
+        crossChapter: false,
+      },
 
       plugins: [
-        // Edit Button
-        function(hook, vm) {
-          hook.beforeEach(function (html) {
-            var url = 'https://github.com/sunjichaocom/website-KnowledgeBase/blob/master/' + vm.route.file
-            var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n'
-
-            return editHtml
-              + html
-              + '\n----\n'
-              + 'Last modified {docsify-updated} '
-              + editHtml
-          })
-        },
+        EditOnGithubPlugin.create('https://github.com/sunjichaocom/website-KnowledgeBase/blob/master/','','📝Edit Document'),
 
         // 给每个页面的末尾加上 footer
         function (hook) {
           var footer = [
             '<hr/>',
             '<footer>',
-            '<span><a href="https://www.sunjichao.com">SunJiChao</a> &copy;2017.</span>',
+            '<span><a href="https://www.sunjichao.com">SunJiChao</a> &copy;2018.</span>',
             '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
             '</footer>'
           ].join('')
@@ -60,6 +73,12 @@
 
     }
   </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 </html>
