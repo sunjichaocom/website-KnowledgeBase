@@ -24,15 +24,14 @@
     window.$docsify = {
       name: 'docsify',                              // 文档标题，会显示在侧边栏顶部。
       nameLink: '/',                                // 点击文档标题后跳转的链接地址。
-      loadSidebar: "sidebar.md",                    // 加载自定义侧边栏，参考多页文档。设置为 true 后会加载 _sidebar.md 文件，也可以自定义加载的文件名。
-      coverpage: "coverpage.md",                    // 启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
+      loadSidebar: true,                            // 加载自定义侧边栏，参考多页文档。设置为 true 后会加载 _sidebar.md 文件，也可以自定义加载的文件名。
+      coverpage: true,                              // 启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
       repo: 'sunjichaocom/website-KnowledgeBase',   // 配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件。
       maxLevel: 6,                                  // 默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级。
-      loadNavbar: "navbar.md",                      // 加载自定义导航栏，参考定制导航栏 了解用法。设置为 true 后会加载 _navbar.md 文件，也可以自定义加载的文件名。
+      loadNavbar: true,                             // 加载自定义导航栏，参考定制导航栏 了解用法。设置为 true 后会加载 _navbar.md 文件，也可以自定义加载的文件名。
       auto2top: true,                               // 切换页面后是否自动跳转到页面顶部
       mergeNavbar: true,                            // 小屏设备下合并导航栏到侧边栏。
-      // search: 'auto',                               // 全文搜索 - Search
-      // homepage: 'home.md',                       // 入口文件改为 /home.md
+      homepage: 'home.md',                          // 入口文件改为 /home.md
       // logo: '/_media/icon.svg',                  // 在侧边栏中出现的网站图标，你可以使用CSS来更改大小
 
       search: {
